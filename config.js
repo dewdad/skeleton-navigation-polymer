@@ -1,5 +1,4 @@
 System.config({
-  "defaultJSExtensions": true,
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -10,9 +9,10 @@ System.config({
   },
   "paths": {
     "*": "dist/*.js",
-    "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
-  }
+    "github:*": "jspm_packages/github/*.js",
+    "npm:*": "jspm_packages/npm/*.js"
+  },
+  "defaultJSExtensions": true
 });
 
 System.config({
@@ -38,8 +38,8 @@ System.config({
     "aurelia-templating-binding": "github:aurelia/templating-binding@0.13.1",
     "aurelia-templating-resources": "github:aurelia/templating-resources@0.13.1",
     "aurelia-templating-router": "github:aurelia/templating-router@0.14.0",
-    "babel": "npm:babel-core@5.8.3",
-    "babel-runtime": "npm:babel-runtime@5.8.3",
+    "babel": "npm:babel-core@5.8.5",
+    "babel-runtime": "npm:babel-runtime@5.8.5",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
@@ -158,6 +158,9 @@ System.config({
       "jquery": "github:components/jquery@2.1.4"
     },
     "npm:babel-runtime@5.8.3": {
+      "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:babel-runtime@5.8.5": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-js@0.9.18": {

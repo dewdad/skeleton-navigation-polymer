@@ -11,14 +11,13 @@
 
       <form id="name-form" is="iron-form" iron-form-submit.delegate="submit()">
 
-        <!-- <paper-input label="First Name" placeholder="first name" char-counter bind-value.two-way="firstName" value.bind="firstName"></paper-input> -->
         <paper-input label="First Name" char-counter value.two-way="firstName"></paper-input>
 
         <paper-input label="Last Name" char-counter value.two-way="lastName"></paper-input>
 
         <paper-input-container>
           <label>Full Name</label>
-          <input readonly="true" value.one-way="fullName | upper"></input>
+          <input readonly="true" value.bind="fullName | upper"></input>
         </paper-input-container>
 
         <paper-button click.delegate="knight()">Knight</paper-button>
@@ -33,7 +32,6 @@
   <script>
     function submitForm() {
       var form = document.getElementById("name-form");
-      console.log(form.submit);
       form.submit();
     }
   </script>

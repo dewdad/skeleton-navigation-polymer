@@ -19,6 +19,10 @@ export class Welcome{
     alert(`Welcome, ${this.fullName}!`);
   }
 
+  knight() {
+    this.firstName = 'Sir ' + this.firstName;
+  }
+
   canDeactivate() {
     if (this.fullName !== this.previousValue) {
       return confirm('Are you sure you want to leave?');

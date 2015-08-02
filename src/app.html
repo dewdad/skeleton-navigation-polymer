@@ -1,20 +1,55 @@
 <template>
 
+  <style is="custom-style">
+    /* https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/styles/app-theme.html#L100 */
+    paper-toolbar.tall .app-name {
+      font-size: 40px;
+      font-weight: 300;
+      /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+      -webkit-transform-origin: left center;
+      transform-origin: left center;
+    }
+
+    #mainToolbar .middle-container {
+      height: 100%;
+      margin-left: 48px;
+    }
+
+    #mainToolbar:not(.tall) .middle {
+      font-size: 18px;
+      padding-bottom: 0;
+    }
+  </style>
+
   <paper-drawer-panel force-narrow>
-    <div drawer>
-      <paper-toolbar class="paper-header">
+
+    <paper-scroll-header-panel drawer fixed>
+
+      <!-- Drawer toolbar -->
+      <paper-toolbar>
         <span>Menu</span>
       </paper-toolbar>
-      <paper-menu>
-        <paper-item repeat.for="row of router.navigation">Foo</paper-item>
+
+      <!-- Drawer content -->
+      <paper-menu attr-for-selected="data-route-name" selected.one-way="currentRoute">
+        <paper-item repeat.for="row of router.navigation" data-route-name.one-way="row.name">
+          <a href.one-way="row.href">${row.title}</a>
+        </paper-item>
       </paper-menu>
-    </div>
-    <paper-scroll-header-panel condenses main>
-      <paper-toolbar class="tall paper-header">
-        <paper-icon-button icon="menu" tabindex="1" paper-drawer-toggle/>
-        <span class="title">${router.title}</span>
-        <span class="title"><iron-icon icon="polymer"></iron-icon> + Aurelia</span>
-        <span if.bind="router.isNavigating"><iron-icon icon="autorenew"/></span>
+
+    </paper-scroll-header-panel>
+
+    <paper-scroll-header-panel condenses main keep-condensed-header>
+      <paper-toolbar class="tall" id="mainToolbar">
+        <paper-icon-button icon="menu" tabindex="1" paper-drawer-toggle></paper-icon-button>
+        <span class="flex"></span>
+
+        <div class="middle middle-container center horizontal layout">
+          <div class="app-name">${router.title}</div>
+        </div>
+
+        <!-- <div class="title">${router.title}</div> -->
+        <div if.bind="router.isNavigating" class="layout end"><iron-icon icon="autorenew"/></div>
       </paper-toolbar>
 
       <div>

@@ -40,16 +40,16 @@ export function configure(aurelia) {
 
   Polymer.telemetry.registrations.forEach(prototype => registerElement(eventManager, bindingLanguage, prototype));
 
-  Array.observe(Polymer.telemetry.registrations, changes => {
-    changes.forEach(change => {
-      if (change.type === "splice" && change.addedCount > 0) {
-        for (let i = 0; i < change.addedCount; i++) {
-          let prototype = change.object[change.index + i - 1];
-          registerElement(eventManager, bindingLanguage, prototype);
+  if(typeof Array.observe != 'undefined') {
+    Array.observe(Polymer.telemetry.registrations, changes => {
+      changes.forEach(change => {
+        if (change.type === "splice" && change.addedCount > 0) {
+          for (let i = 0; i < change.addedCount; i++) {
+            let prototype = change.object[change.index + i - 1];
+            registerElement(eventManager, bindingLanguage, prototype);
+          }
         }
-      }
-    })
-  });
-
-  console.log(bindingLanguage.attributeMap);
+      })
+    });
+  }
 }

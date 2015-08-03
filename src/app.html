@@ -31,7 +31,7 @@
       </paper-toolbar>
 
       <!-- Drawer content -->
-      <paper-menu attr-for-selected="data-route-name" selected.one-way="currentRoute">
+      <paper-menu selected.one-way="navigationIndex">
         <paper-item repeat.for="row of router.navigation" data-route-name.one-way="row.name">
           <a href.one-way="row.href">${row.title}</a>
         </paper-item>

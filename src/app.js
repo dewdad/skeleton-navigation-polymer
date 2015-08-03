@@ -12,13 +12,7 @@ export class App {
     this.router = router;
   }
 
-  get currentRoute() {
-    if (typeof this.router != 'undefined') {
-        let active = this.router.navigation.filter(row => row.isActive);
-        if (active.length > 0) {
-          return active[0].name;
-        }
-    }
-    return '';
+  get navigationIndex() {
+    return this.router.navigation.findIndex(row => row.isActive);
   }
 }

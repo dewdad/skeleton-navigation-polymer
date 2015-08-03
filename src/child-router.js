@@ -9,4 +9,8 @@ export class ChildRouter{
 
     this.router = router;
   }
+
+  get navigationIndex() {
+    return this.router.navigation.findIndex(row => row.isActive);
+  }
 }

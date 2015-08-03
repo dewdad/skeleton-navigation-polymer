@@ -3,7 +3,12 @@
     <h2>${heading}</h2>
     <div class="horizontal layout">
 
-      <!-- Note: selection won't work until https://github.com/PolymerElements/iron-selector/issues/47 is resolved -->
+      <!--
+        Note: selection won't work at the moment. This appears to be related
+        to some iron-selector issues:
+        https://github.com/PolymerElements/iron-selector/issues/47
+        https://github.com/PolymerElements/iron-selector/issues/30
+      -->
       <div class="flex-2">
         <paper-menu selected="0" class="list">
           <paper-item repeat.for="row of router.navigation">

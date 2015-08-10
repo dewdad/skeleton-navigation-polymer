@@ -63,6 +63,7 @@
       "aurelia-logging": "github:aurelia/logging@^0.6.0",
       "aurelia-metadata": "github:aurelia/metadata@^0.7.0",
       "aurelia-path": "github:aurelia/path@^0.8.0",
+      "aurelia-polymer": "github:roguePanda/aurelia-polymer@^0.1.1",
       "aurelia-route-recognizer": "github:aurelia/route-recognizer@^0.6.0",
       "aurelia-router": "github:aurelia/router@^0.10.1",
       "aurelia-task-queue": "github:aurelia/task-queue@^0.6.0",

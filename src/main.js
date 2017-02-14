@@ -3,8 +3,7 @@ export function configure(aurelia) {
     .standardConfiguration()
     .developmentLogging()
     .plugin('aurelia-animator-css')
-    .plugin('aurelia-polymer')
-    .plugin('au-select-custom-attribute');
+    .plugin('aurelia-polymer');
 
   aurelia.start().then(a => a.setRoot());
 }

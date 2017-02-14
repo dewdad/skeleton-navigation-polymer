@@ -36,9 +36,9 @@
 
       <!-- Drawer content -->
       <paper-menu selected.one-way="navigationIndex">
-          <paper-item repeat.for="row of router.navigation" data-route-name.one-way="row.name">
-            <a href.one-way="row.href">${row.title}</a>
-          </paper-item>
+        <paper-item repeat.for="row of router.navigation" data-route-name.one-way="row.name">
+          <a href.one-way="row.href">${row.title}</a>
+        </paper-item>
       </paper-menu>
 
     </paper-scroll-header-panel>

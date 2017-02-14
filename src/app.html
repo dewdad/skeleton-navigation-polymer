@@ -35,29 +35,11 @@
       </paper-toolbar>
 
       <!-- Drawer content -->
-      <!-- Here is "Cannot read property 'insertBefore' of null" error, though the app seems running.
-	   The error must disappear by this patch.
-	   https://github.com/aurelia/templating/issues/259#issuecomment-209538915 -->
       <paper-menu selected.one-way="navigationIndex">
           <paper-item repeat.for="row of router.navigation" data-route-name.one-way="row.name">
             <a href.one-way="row.href">${row.title}</a>
           </paper-item>
       </paper-menu>
-
-      <!-- See for au-select:
-      https://github.com/roguePanda/aurelia-polymer/issues/23
-      https://github.com/roguePanda/aurelia-polymer/issues/17
-      
-      Howerver, this code does not remove the 'insertBefore' error.
-      
-      <paper-menu au-select selectable=".selectable_item" selected.one-way="navigationIndex">
-	<div>
-          <paper-item class="selectable_item" repeat.for="row of router.navigation" data-route-name.one-way="row.name">
-            <a href.one-way="row.href">${row.title}</a>
-          </paper-item>
-	</div>
-      </paper-menu>
-      -->
 
     </paper-scroll-header-panel>
 
